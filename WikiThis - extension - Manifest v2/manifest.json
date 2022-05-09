@@ -1,0 +1,19 @@
+{
+"manifest_version":2,
+"name": "WikiThis",
+"version":"1.0",
+"description": "Search on Wikipedia on the go",
+"icons":{
+    "128": "panda-128.png",
+    "48": "panda-48.png",
+    "16": "panda-16.png"
+},
+"background": {
+    "scripts" : ["eventPage.js"],
+    "persistent":false
+},
+"permissions": [
+    "tabs",
+    "contextMenus"
+]
+}
