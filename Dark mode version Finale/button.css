@@ -1,0 +1,119 @@
+
+  
+  body{ /*permet d'aligner le texte ds le popup, de facçon compact */
+    min-width: 300px;
+    text-align: center ;
+  }
+  
+
+  h1{
+    font-family: 'Sansita Swashed', cursive;
+    text-align: center;
+    
+  }
+
+  .black{
+    color: black;
+  }
+
+  .blue{
+    color: rgb(28, 100, 176);
+  }
+
+  p,
+   .button, .button2 {
+     font-family: 'Sansita', sans-serif;
+    font-size: 1.25;
+    text-align: justify;
+  }
+
+  .button, .button2 {
+    background-color:#8ABFF0;
+    position:relative;
+    display: flex; /* on veut que On et Off se positionne cote à cote*/
+    flex-direction: row ; /*ici en une ligne*/
+    align-items: center;
+    justify-content: space-between;
+    height: 2rem;
+    width: 5rem;
+    border-radius: 1rem;
+    /*animation: backgroundYellow 1s infinite; */
+    cursor: pointer;
+  
+
+  }
+
+  .row, .row2 {
+    padding: 0 0.25rem;
+    pointer-events: none;
+
+  }
+
+  /*création du cercle qui va donner l'illusion d'un bouton à glisser sur On ou Off*/
+  .circle, .circle2 { 
+    position:absolute;
+    top: 0;  /*Pour que le bouton se positionne à gauche, on mettra 0*/
+    left: 0;
+    height: 2rem;
+    width: 2rem ;
+    border-radius: 50%;
+    background-color: #588BE4;
+    /*animation: moveCircleRight 1s infinite;*/
+    pointer-events: none;
+  }
+
+  /* 1ére animation boutton changement de couleur de gauche à droite*/
+  @keyframes moveCircleRight {
+    0% {
+        left: 0; /*  se positionner à gauche*/
+        background-color: #588BE4;
+    }
+  
+    100% {
+        left: 100%;
+        transform: translateX(-100%);
+        background-color: rgb(255, 213, 0)
+    }
+  }
+
+ /*2ème animation bouton changement de couleur de droite à gauche */
+  @keyframes moveCircleLeft {
+    0% {
+        left: 100%;
+        transform: translateX(-100%);
+        background-color:  rgb(255, 213, 0);
+    }
+  
+    100% {
+        left: 0;
+        transform: translateX(0);
+        background-color: #588BE4;
+    }
+  }
+
+
+  /*animation backgroundYellow bouton: permetle changement de background de bleu à jaune en position "On"en fonction de Off ou On*/
+  @keyframes backgroundYellow {
+    from{
+        background-color:#8ABFF0;
+    }
+
+    to {
+        background-color: #FDFCA3;
+    }
+}
+
+/*animation backgroundBlue bouton: permetle changement de background de jaune à bleu, en position "Off"*/
+@keyframes backgroundBlue {
+  from {
+      background-color: #FDFCA3;
+  }
+
+  to {
+      background-color: #8ABFF0;
+  }
+}
+
+
+
+

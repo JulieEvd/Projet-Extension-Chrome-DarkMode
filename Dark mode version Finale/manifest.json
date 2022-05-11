@@ -1,0 +1,32 @@
+{
+    "name": "Darkmode",
+    "description": "Go from Dark Mode to Light Mode and Vice Versa !",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+      }, 
+      "permissions": ["storage", "activeTab", "scripting"],
+
+      "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            
+            "50": "/images/star-wars-3215554_640.png"
+          }
+          
+      },
+      "icons": {
+        
+        "50": "/images/star-wars-3215554_640.png"
+      },
+      
+
+      "content_scripts": [
+        {
+          "matches": ["*://*.google.com/*"],
+          "js": ["popup.js"]
+        }
+      ]
+
+  }
