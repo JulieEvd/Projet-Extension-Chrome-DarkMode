@@ -3,6 +3,7 @@
   body{ /*permet d'aligner le texte ds le popup, de facçon compact */
     min-width: 300px;
     text-align: center ;
+    padding: 15px;
   }
   
 
@@ -31,7 +32,7 @@
     background-color:#8ABFF0;
     position:relative;
     display: flex; /* on veut que On et Off se positionne cote à cote*/
-    flex-direction: row ; /*ici en une ligne*/
+    flex-direction: row ; /*positionner les row en une ligne*/
     align-items: center;
     justify-content: space-between;
     height: 2rem;
@@ -61,6 +62,8 @@
     /*animation: moveCircleRight 1s infinite;*/
     pointer-events: none;
   }
+
+  /* key frames: permet une transition, d'une valeur de départ à une valeur de fin. Passage d'une couleur A à une couleur B*/
 
   /* 1ére animation boutton changement de couleur de gauche à droite*/
   @keyframes moveCircleRight {

@@ -1,11 +1,13 @@
   //Fonction événementielle
-  // fonction prise dans la doc (avec Fred)
+
+  // fonction prise dans la doc (avec Fred)  
+  //La syntaxe get permet de lier une propriété d'un objet à une fonction qui sera appelée lorsqu'on accédera à la propriété.
   async function getCurrentTab() {
     let queryOptions = { active: true, currentWindow: true };
-    let [tab] = await chrome.tabs.query(queryOptions);
+    let [tab] = await chrome.tabs.query(queryOptions); //L'opérateur await permet d'attendre la résolution d'une promesse (Promise). Il ne peut être utilisé qu'au sein d'une fonction asynchrone (définie avec l'instruction async function).
     return tab;
   }
-
+  // si le popup est ouvert, alors execute le code
   if(document.querySelector(".popup")){
 
   //ici on cible le bouton et cercle pour agir dessus
@@ -19,15 +21,16 @@
     button.addEventListener("click", async ()=>{
         if(!buttonOn){
           buttonOn = true;
-          circle.style.animation = "moveCircleRight 1s forwards";
+          circle.style.animation = "moveCircleRight 1s forwards";// forwards est pour bloqué le bouton, sinon il repart à gauche
           button.style.animation = "backgroundYellow 1s forwards";
 
-        //partie de code prise dans la doc, car ds tuto v2
+        //partie de code prise dans la doc(avec Fred), car ds tuto v2:  https://developer.chrome.com/docs/extensions/reference/scripting/
         /*chrome.scripting.executeScript(
         {
           target: {tabId: tabId, allFrames: true},
           files: ['script.js']*/
-
+          
+          /*ici on va stocker la réponse */
           const tab = await getCurrentTab();
           console.log(tab)
           /*chrome:permet d'acceder à l'onglet actuellement ouvert/ executeScript:puis nous voulons executer le script sur cette page */ 
@@ -35,7 +38,7 @@
             target: {tabId: tab.id},
             files: ["appOn.js"]
             
-            //code:"alert('h1')"
+            //test: code:"alert('h1')"
           })
         }
 
@@ -52,7 +55,7 @@
             target: {tabId: tab.id},
             files: ["appOff.js"]
       
-            //code:"alert('off')"
+            //test: code:"alert('off')"
           })
         }
     })

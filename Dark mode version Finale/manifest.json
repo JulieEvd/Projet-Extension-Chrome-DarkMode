@@ -1,6 +1,6 @@
 {
     "name": "Darkmode",
-    "description": "Go from Dark Mode to Light Mode and Vice Versa !",
+    "description": "Go from Dark Mode to Light Mode and Vice Versa !!!",
     "version": "1.0",
     "manifest_version": 3,
     "background": {
@@ -12,13 +12,13 @@
         "default_popup": "popup.html",
         "default_icon": {
             
-            "50": "/images/star-wars-3215554_640.png"
+            "50": "/images/moon.png"
           }
           
       },
       "icons": {
         
-        "50": "/images/star-wars-3215554_640.png"
+        "50": "/images/moon.png"
       },
       
 
